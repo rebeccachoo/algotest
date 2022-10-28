@@ -1,0 +1,44 @@
+{
+    "PositionType": "PositionType.Sell" or “PositionType.Buy”,
+    "Lots": 1 //integer,
+    "LegStopLoss": {
+    "Type": //"LegTgtSLType.Percentage" or “LegTgtSLType.Points” or
+    "LegTgtSLType.UnderlyingPercentage" and so on,
+    "Value": 40 //number
+    },
+    "LegTarget": {
+    "Type": //Same as Leg Stop Loss type above,
+    "Value": 30 //number
+    },
+    "LegTrailSL": {
+    
+    "Type": "None" if not selected or “TrailStopLossType.Points” or
+    “TrailStopLossType.Percentage”,
+    "Value": {
+    “InstrumentMove”: //number
+    “StopLossMove”: //number
+    }
+    },
+    "LegMomentum": {
+    "Type": "None" or “MomentumType.PointsUp” or “MomentumType.
+    PointsDown” or so on,
+    "Value": //number
+    },
+    "ExpiryKind": "ExpiryType.Weekly" or “ExpiryType.Monthly”,
+    "EntryType": "EntryType.EntryByStrikeType",
+    "StrikeParameter": "StrikeType.ATM" or “StrikeType.OTM1” when
+    EntryByStrikeType, or //number when EntryByPremium, object as {“Lower”:
+    //number, “Upper”: //number} when EntryByPremiumRange, object as
+    {“Adjustment”: “Plus” or “Minus”, “Multiplier”: //number} when
+    EntryByStraddleWidth,
+    "InstrumentKind": "LegType.CE",
+    "LegReentrySL": {
+    "Type": "ReentryType.ASAP" or "ReentryType.ASAPReverse",
+    "Value": 0 //integer
+    },
+    "LegReentryTP": {
+    "Type": //Same as above,
+    "Value": 1
+    }
+    
+    },
